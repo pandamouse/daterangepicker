@@ -577,7 +577,7 @@
                     hour = parseInt(this.container.find('.left .hourselect').val(), 10);
                     minute = parseInt(this.container.find('.left .minuteselect').val(), 10);
                     if (isNaN(minute)) {
-                        minute = parseInt(this.container.find('.left .minuteselect option:last').val(), 10);
+                        minute = parseInt(this.container.find('.left .minuteselect option').last().val(), 10);
                     }
                     second = this.timePickerSeconds ? parseInt(this.container.find('.left .secondselect').val(), 10) : 0;
                     if (!this.timePicker24Hour) {
@@ -591,7 +591,7 @@
                     hour = parseInt(this.container.find('.right .hourselect').val(), 10);
                     minute = parseInt(this.container.find('.right .minuteselect').val(), 10);
                     if (isNaN(minute)) {
-                        minute = parseInt(this.container.find('.right .minuteselect option:last').val(), 10);
+                        minute = parseInt(this.container.find('.right .minuteselect option').last().val(), 10);
                     }
                     second = this.timePickerSeconds ? parseInt(this.container.find('.right .secondselect').val(), 10) : 0;
                     if (!this.timePicker24Hour) {
@@ -1317,7 +1317,7 @@
                     }
                     var minute = parseInt(this.container.find('.left .minuteselect').val(), 10);
                     if (isNaN(minute)) {
-                        minute = parseInt(this.container.find('.left .minuteselect option:last').val(), 10);
+                        minute = parseInt(this.container.find('.left .minuteselect option').last().val(), 10);
                     }
                     var second = this.timePickerSeconds ? parseInt(this.container.find('.left .secondselect').val(), 10) : 0;
                     date = date.clone().hour(hour).minute(minute).second(second);
@@ -1340,7 +1340,7 @@
                     }
                     var minute = parseInt(this.container.find('.right .minuteselect').val(), 10);
                     if (isNaN(minute)) {
-                        minute = parseInt(this.container.find('.right .minuteselect option:last').val(), 10);
+                        minute = parseInt(this.container.find('.right .minuteselect option').last().val(), 10);
                     }
                     var second = this.timePickerSeconds ? parseInt(this.container.find('.right .secondselect').val(), 10) : 0;
                     date = date.clone().hour(hour).minute(minute).second(second);
@@ -1374,14 +1374,14 @@
                     //ignore times when comparing dates if time picker seconds is not enabled
                     if (this.startDate.format(format) == this.ranges[range][0].format(format) && this.endDate.format(format) == this.ranges[range][1].format(format)) {
                         customRange = false;
-                        this.chosenLabel = this.container.find('.ranges li:eq(' + i + ')').addClass('active').attr('data-range-key');
+                        this.chosenLabel = this.container.find('.ranges li').eq(i).addClass('active').attr('data-range-key');
                         break;
                     }
                 } else {
                     //ignore times when comparing dates if time picker is not enabled
                     if (this.startDate.format('YYYY-MM-DD') == this.ranges[range][0].format('YYYY-MM-DD') && this.endDate.format('YYYY-MM-DD') == this.ranges[range][1].format('YYYY-MM-DD')) {
                         customRange = false;
-                        this.chosenLabel = this.container.find('.ranges li:eq(' + i + ')').addClass('active').attr('data-range-key');
+                        this.chosenLabel = this.container.find('.ranges li').eq(i).addClass('active').attr('data-range-key');
                         break;
                     }
                 }
@@ -1389,7 +1389,7 @@
             }
             if (customRange) {
                 if (this.showCustomRangeLabel) {
-                    this.chosenLabel = this.container.find('.ranges li:last').addClass('active').attr('data-range-key');
+                    this.chosenLabel = this.container.find('.ranges li').last().addClass('active').attr('data-range-key');
                 } else {
                     this.chosenLabel = null;
                 }
@@ -1459,7 +1459,7 @@
             var hour = parseInt(cal.find('.hourselect').val(), 10);
             var minute = parseInt(cal.find('.minuteselect').val(), 10);
             if (isNaN(minute)) {
-                minute = parseInt(cal.find('.minuteselect option:last').val(), 10);
+                minute = parseInt(cal.find('.minuteselect option').last().val(), 10);
             }
             var second = this.timePickerSeconds ? parseInt(cal.find('.secondselect').val(), 10) : 0;
 
