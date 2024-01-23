@@ -1254,8 +1254,8 @@
             if (!$(e.target).hasClass('available')) return;
 
             var title = $(e.target).attr('data-title');
-            var row = title.substr(1, 1);
-            var col = title.substr(3, 1);
+            var row = title.substring(1, 2);
+            var col = title.substring(3, 4);
             var cal = $(e.target).parents('.drp-calendar');
             var date = cal.hasClass('left') ? this.leftCalendar.calendar[row][col] : this.rightCalendar.calendar[row][col];
 
@@ -1270,8 +1270,8 @@
                     if ($(el).hasClass('week')) return;
 
                     var title = $(el).attr('data-title');
-                    var row = title.substr(1, 1);
-                    var col = title.substr(3, 1);
+                    var row = title.substring(1, 2);
+                    var col = title.substring(3, 4);
                     var cal = $(el).parents('.drp-calendar');
                     var dt = cal.hasClass('left') ? leftCalendar.calendar[row][col] : rightCalendar.calendar[row][col];
 
@@ -1291,8 +1291,8 @@
             if (!$(e.target).hasClass('available')) return;
 
             var title = $(e.target).attr('data-title');
-            var row = title.substr(1, 1);
-            var col = title.substr(3, 1);
+            var row = title.substring(1, 2);
+            var col = title.substring(3, 4);
             var cal = $(e.target).parents('.drp-calendar');
             var date = cal.hasClass('left') ? this.leftCalendar.calendar[row][col] : this.rightCalendar.calendar[row][col];
 
